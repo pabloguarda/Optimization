@@ -1,4 +1,6 @@
 
+clear % eliminamos todas las variables creadas previamente en Octave/Matlab
+
 function x2 = floresA(x1)
 
     x2 = 90-2*x1;
@@ -44,9 +46,9 @@ v5 = (inv([2 1;0 1])*[90;0])'
 
 v = [v1;v2;v3;v4;v5]
 
-[v(:,1)]
+v(:,1)
 
-[v(:,2)]
+v(:,2)
 
 x1 = linspace(1,150); %Rango de valores de input para las funciones
 
@@ -72,7 +74,7 @@ end
 
 x1 = linspace(1,150); %Rango de valores de input para las funciones
 
-fill([v(:,1)],[v(:,2)],'r')
+fill(v(:,1),v(:,2),'r')
 hold on
 plot(x1,curvadenivel(100000,x1),'-.k')
 hold on
