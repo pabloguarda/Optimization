@@ -74,18 +74,19 @@ end
 
 x1 = linspace(1,150); %Rango de valores de input para las funciones
 
-fill(v(:,1),v(:,2),'r')
+
+fill(v(:,1),v(:,2),'w','EdgeColor','k')
 hold on
-plot(x1,curvadenivel(100000,x1),'-.k')
+c1 = plot(x1,curvadenivel(100000,x1),':k');
 hold on
-plot(x1,curvadenivel(200000,x1),'--k')
+c2 = plot(x1,curvadenivel(200000,x1),'-.k');
 hold on
-plot(x1,curvadenivel(270000,x1),'-k')
+c3 = plot(x1,curvadenivel(270000,x1),'--k');
 hold on
 title ('Curvas de nivel de la funcion objetivo')
 xlabel ('Numero de arreglos florales F1 (x1)')
 ylabel ('Numero de arreglos florales F2 (x2)')
 ylim([0 100]);
 xlim([0 150]);
-legend('Region Factible','z = 100M$','z = 200M$', 'z = 270M$')
+legend([c1 c2 c3],'z = 100M$','z = 200M$', 'z = 270M$')
 hold off
