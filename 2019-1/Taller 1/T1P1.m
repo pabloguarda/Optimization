@@ -58,7 +58,7 @@ plot(x1,floresB(x1),'k') %color negro para disponibilidad de flores B
 hold on
 plot(x1,floresC(x1),'g') %color verde para disponibilidad de flores C
 fill(v(:,1),v(:,2),'r')
-title ('Region factible definida por la disponibilidad de flores y no negatividad de variables de decision')
+title ({'Region factible definida por las restricciones de' 'disponibilidad de flores y no negatividad de variables de decision'})
 xlabel ('Numero de arreglos florales F1 (x1)')
 ylabel ('Numero de arreglos florales F2 (x2)')
 ylim([0 100])
@@ -81,12 +81,16 @@ c1 = plot(x1,curvadenivel(100000,x1),':k');
 hold on
 c2 = plot(x1,curvadenivel(200000,x1),'-.k');
 hold on
-c3 = plot(x1,curvadenivel(270000,x1),'--k');
+c3 = plot(x1,curvadenivel(270000,x1),'--k'); %Curva de nivel en el valor óptimo (Vértice: x1 = 15, x2 = 35)
 hold on
-title ('Curvas de nivel de la funcion objetivo')
+title ('Curvas de nivel de la funcion objetivo. Valor optimo: (x1,x2) = (15,35))')
 xlabel ('Numero de arreglos florales F1 (x1)')
 ylabel ('Numero de arreglos florales F2 (x2)')
 ylim([0 100]);
 xlim([0 150]);
-legend([c1 c2 c3],'z = 100M$','z = 200M$', 'z = 270M$')
+legend([c1 c2 c3],'z = 100M$','z = 200M$', 'z = 270M$ (optimo)')
 hold off
+
+vopt = v3
+
+FOopt = 4000*vopt(1)+6000*vopt(2)
